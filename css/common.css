@@ -10,3 +10,6 @@ a {
 li {
     list-style: none;
 }
+html body {
+    font-family: "Microsoft YaHei" "微软雅黑";
+}
