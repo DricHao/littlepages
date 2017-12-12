@@ -271,9 +271,15 @@ body {
     line-height: 16px;
     letter-spacing: 7px;
 }
+.lp {
+    position: fixed;
+    top: 0%;
+    padding-top:10px;
+}
 .cons {
 
 }
 .cons img {
     width: 100%;
+    margin-bottom: 14px;
 }
