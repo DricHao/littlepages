@@ -1,0 +1,243 @@
+.main_visual {
+    height: 185px;
+    overflow: hidden;
+    position: relative;
+}
+
+.main_image {
+    height: 185px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main_image ul {
+    width: 100%;
+    height: 185px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.main_image li {
+    float: left;
+    width: 100%;
+    height: 185px;
+}
+
+.main_image li span {
+    display: block;
+    width: 100%;
+    height: 185px
+}
+
+.main_image li span img {
+    width: 100%;
+    height: 185px;
+}
+
+.main_image li a {
+    display: block;
+    width: 100%;
+    height: 185px
+}
+
+.main_image li .img_1 {
+    background: url(../images/img_main_1.jpg) center top no-repeat
+}
+
+.main_image li .img_4 {
+    background: url(../images/img_main_2.jpg) center top no-repeat
+}
+
+.main_image li .img_3 {
+    background: url(../images/img_main_3.jpg) center top no-repeat
+}
+
+div.flicking_con {
+    position: absolute;
+    top: 153px;
+    left: 50%;
+    z-index: 999;
+    width: 300px;
+    height: 21px;
+    margin: 0 0 0 -32px;
+}
+
+div.flicking_con a {
+    float: left;
+    width: 21px;
+    height: 21px;
+    margin: 0;
+    padding: 0;
+    background: url(../images/12.png) 0 0 no-repeat;
+    display: block;
+    text-indent: -1000px;
+    position: relative;
+    top: 0px;
+}
+
+div.flicking_con a.on {
+    background-position: 0 -21px
+}
+
+#btn_prev,
+#btn_next {
+    z-index: 11111;
+    position: absolute;
+    display: block;
+    width: 73px!important;
+    height: 74px!important;
+    top: 50%;
+    margin-top: -37px;
+    display: none;
+    
+}
+
+#btn_prev {
+    left: 100px;
+    background: url(../images/left.png) no-repeat;
+}
+
+#btn_next {
+    right: 100px;
+    background: url(../images/right.png) no-repeat;
+}
+/**/
+body {
+    background: rgba(0, 0, 0, 0.7);
+}
+.top {
+    background: rgba(0, 0, 0, 0.3);
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.top-btn-1 {
+    width: 40px;
+    height: 40px;
+    background: rgb(189, 92, 92);
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+}
+.top-btn-1 img {
+    width:25px;
+    height: 25px;
+    margin: 8px;
+    filter: grayscale(40%);
+}
+.top-btn-2 {
+    width: 40px;
+    height: 40px;
+    background: rgb(8, 117, 163);
+    position: absolute;
+    bottom: 0;
+    right: 70px;
+}
+.top-btn-2 img {
+    width:25px;
+    height: 25px;
+    margin: 8px;
+}
+.mid-mane {
+    height: 68px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.78);
+}
+.mid-mane ul {
+    width: 60%;
+    display: flex;
+    margin-left: 25%;
+}
+.mid-mane ul li {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+.mid-mane ul li img {
+    height: 32px;
+    width: 32px;
+    margin: 9px;
+    margin-bottom: 3px;
+}
+.mid-mane ul li a {
+    font-size: 12px;
+    color: #dbdbdb;
+}
+.action-1 {
+    animation: act-1 3.5s;
+}
+.action-2 {
+    animation: act-2 2s
+}
+.dis {
+    display: none !important;
+}
+.dip {
+    opacity: 0 !important;
+}
+@keyframes act-1 {
+    from{opacity: 1}to{opacity: 0};
+}
+@keyframes act-2 {
+    from{opacity: 0}to{opacity: 1};
+}
+.card {
+    width: 100%;
+    height: 214px;
+    margin: 5px auto 12px auto;
+    position: relative;
+}
+.card img {
+    width: 100%;
+    height: 214px;
+}
+.container {
+    padding-bottom:50px;
+}
+.tile {
+    background: rgba(0, 0, 0, 0.53);
+    position: absolute;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.tile p {
+    font-size: 12px;
+    color: #dbdbdb;
+    line-height: 45px;
+    margin-left: 20px;
+}
+.tile img {
+    width: 23px;
+    height: 23px;
+    margin: 11px;
+}
+.bottom {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0%;
+    background: rgba(0, 0, 0, 0.77);
+}
+.bottom ul {
+    width: 100%;
+    display: flex;
+}
+.bottom ul li {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.bottom ul li img {
+    width:26px;
+    height: 27px;
+    margin: 10px auto;
+}

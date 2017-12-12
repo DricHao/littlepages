@@ -1,0 +1,159 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>商品展示</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/common.css">
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/jquery.touchSlider.js"></script>
+    </head>
+    <body>
+        
+        <div class="main_visual">   
+                <div class="flicking_con">
+                        </div>
+                        <div class="main_image">
+                            <ul>
+                                    <li><span><a href=""><img id="b_{$ak + 1}" src="images/box.jpeg"></a></span></li>
+                                    <li><span><a href=""><img id="b_{$ak + 1}" src="images/voice.jpeg"></a></span></li>
+                                    <li><span><a href=""><img id="b_{$ak + 1}" src="images/watch.jpeg"></a></span></li>                                                       
+                                    
+                            </ul>
+                            <a href="javascript:;" id="btn_prev"></a>
+                            <a href="javascript:;" id="btn_next"></a>
+                
+                        </div>
+                        <div class="top"></div>
+                        <div class="top-btn-1"><img src="images/love.png" alt=""></div>
+                        <div class="top-btn-2"><img src="images/collect.png" alt=""></div>
+        </div>
+        <div class="mid-mane">
+            <ul id="first">
+                <li><img src="images/Apple.png" alt=""><a href="">苹果</a></li>
+                <li><img src="images/xiaomi.png" alt=""><a href="">小米</a></li>
+                <li><img src="images/intel.png" alt=""><a href="">因特尔</a></li>
+                <li><img src="images/cloud.png" alt=""><a href="">阿里云</a></li>
+            </ul>
+            <ul class="dis dip" id="second">
+                    <li><img src="images/google.png" alt=""><a href="">谷歌</a></li>
+                    <li><img src="images/oppo.png" alt=""><a href="">oppo</a></li>
+                    <li><img src="images/wangyi.png" alt=""><a href="">网易</a></li>
+                    <li><img src="images/360.png" alt=""><a href="">360</a></li>
+            </ul>
+        </div>
+        <div class="container">
+                <div class="card">
+                        <img src="images/erji.jpeg" alt="">
+                        <div class="tile">
+                            <p>索尼最新耳机，高科技完美音质</p>
+                            <img src="images/cargo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card">
+                            <img src="images/camera.jpeg" alt="">
+                            <div class="tile">
+                                <p>卡西欧美颜相机，你一直可以美</p>
+                                <img src="images/cargo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                                <img src="images/tv.jpeg" alt="">
+                                <div class="tile">
+                                    <p>海信52吋曲面电视，视界从未如此开阔</p>
+                                    <img src="images/cargo.png" alt="">
+                                </div>
+                            </div>
+        </div>
+        <div class="bottom">
+            <ul>
+                <li><img src="images/index.png" alt=""></li>
+                <li><img src="images/new.png" alt=""></li>
+                <li><img src="images/table.png" alt=""></li>
+                <li><img src="images/center.png" alt=""></li>
+            </ul>
+        </div>
+        <script>
+            var indexLi = $('.main_image>ul li').length;
+                       
+            (function() {
+                var wid = window.innerWidth*0.04;
+                var left = Number($('.flicking_con').css('left').slice(0,3))
+                
+                var num = indexLi-3;
+                var slip = left-num*wid;
+
+                $('.flicking_con').css('left',slip)
+                for(i=0;i<indexLi;i++){
+                    var a = '<a></a>'
+                    
+                $('.flicking_con').append(a)
+            }
+            })()
+
+                $(document).ready(function(){
+        $(".main_visual").hover(function(){
+            $("#btn_prev,#btn_next").fadeIn()
+        },function(){
+            $("#btn_prev,#btn_next").fadeOut()
+        });
+
+        $dragBln = false;
+
+        $(".main_image").touchSlider({
+            flexible : true,
+            speed : 200,
+            btn_prev : $("#btn_prev"),
+            btn_next : $("#btn_next"),
+            paging : $(".flicking_con a"),
+            counter : function (e){
+                $(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+            }
+        });
+
+        $(".main_image").bind("mousedown", function() {
+            $dragBln = false;
+        });
+
+        $(".main_image").bind("dragstart", function() {
+            $dragBln = true;
+        });
+
+        $(".main_image a").click(function(){
+            if($dragBln) {
+                return false;
+            }
+        });
+
+        timer = setInterval(function(){
+            $("#btn_next").click();
+        }, 2500);
+
+    });
+    
+
+    (function(){
+        function act_1 () {
+            $('#first').removeClass('dis');
+            $('#first').addClass('action-1');
+            var tiemer = setTimeout(function(){
+                $('#first').addClass('dis');
+                act_2()
+            },3500);
+
+        };
+        function act_2 () {
+            $('#second').removeClass('dis');
+            $('#second').addClass('action-2');
+            var tiemer = setTimeout(function(){
+                $('#second').addClass('dis');
+                act_1()
+            },2000);
+
+        }
+        act_1()
+    })()
+        </script>   
+    </body>
+</html>
